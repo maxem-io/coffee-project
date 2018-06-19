@@ -7,7 +7,7 @@
 	livereload:    enabled: false
 	tests:         enabled: true
 	copy:          enabled: true
-	watch:         enabled: true
+	watch:         enabled: false
 	coffee:
 		enabled:             true
 		sourceDirectoryPath: "src"

@@ -6,6 +6,9 @@
     "type": "git",
     "url": "git://github.com/viriciti/coffee-project.git"
   },
+  "scripts": {
+    "build": "coffee --output build --compile src"
+  },
   "main": "index.js",
   "license": "UNLICENSED",
   "dependencies": {
