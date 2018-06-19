@@ -1,4 +1,4 @@
-var _, browserify, coffeeReactify, fs, gulp, gulpLivereload, gulpTap, jadeify, log, vinylSource, watchify;
+var _, browserify, coffeeReactify, fs, gulp, gulpLivereload, gulpTap, pugify, log, vinylSource, watchify;
 
 _ = require("lodash");
 
@@ -14,7 +14,7 @@ gulpLivereload = require("gulp-livereload");
 
 gulpTap = require("gulp-tap");
 
-jadeify = require("jadeify");
+pugify = require("pugify");
 
 vinylSource = require("vinyl-source-stream");
 
@@ -75,8 +75,8 @@ module.exports = function(coffeeProjectOptions) {
           case "coffee-reactify":
             bundler.transform(coffeeReactify);
             break;
-          case "jadeify":
-            bundler.transform(jadeify);
+          case "pugify":
+            bundler.transform(pugify);
         }
       }
       bundler.add(entry);

@@ -1,4 +1,4 @@
-var _, browserify, coffeeReactify, coffeeify, fs, gulp, gulpStreamify, gulpTap, gulpUglify, jadeify, log, path, vinylSource;
+var _, browserify, coffeeReactify, coffeeify, fs, gulp, gulpStreamify, gulpTap, gulpUglify, pugify, log, path, vinylSource;
 
 _ = require("lodash");
 
@@ -18,7 +18,7 @@ gulpTap = require("gulp-tap");
 
 gulpUglify = require("gulp-uglify");
 
-jadeify = require("jadeify");
+pugify = require("pugify");
 
 path = require("path");
 
@@ -145,8 +145,8 @@ module.exports = function(coffeeProjectOptions) {
           case "coffee-reactify":
             bundler.transform(coffeeReactify);
             break;
-          case "jadeify":
-            bundler.transform(jadeify);
+          case "pugify":
+            bundler.transform(pugify);
         }
       }
       bundler.add(entry);

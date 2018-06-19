@@ -5,7 +5,7 @@ fs             = require "fs"
 gulp           = require "gulp"
 gulpLivereload = require "gulp-livereload"
 gulpTap        = require "gulp-tap"
-jadeify        = require "jadeify"
+pugify        = require "pugify"
 vinylSource    = require "vinyl-source-stream"
 watchify       = require "watchify"
 
@@ -57,7 +57,7 @@ module.exports = (coffeeProjectOptions) ->
 			for transform in transforms or []
 				switch transform
 					when "coffee-reactify" then	bundler.transform coffeeReactify
-					when "jadeify"         then bundler.transform jadeify
+					when "pugify"         then bundler.transform pugify
 
 			bundler.add entry
 

@@ -27,7 +27,7 @@ defaults =
 				bundle:     "app.bundle.js"
 				paths:      [ "#{sourceClientDirectoryPath}/js/app" ]
 				extensions: [ ".coffee", ".jade", ".cjsx" ]
-				transforms: [ "coffee-reactify", "jadeify" ]
+				transforms: [ "coffee-reactify", "pugify" ]
 
 	clean:
 		enabled:             true
@@ -85,6 +85,6 @@ module.exports = (options = {}) ->
 	env = {}
 	env.less = theme: process.env.APP_THEME if process.env.APP_THEME
 
-	for stat in lsr.sync "#{__dirname}/tasks"
+	for stat in lsr.lsrSync "#{__dirname}/tasks"
 		continue if stat.isDirectory()
 		require(stat.fullPath) _.merge defaults, options, env
